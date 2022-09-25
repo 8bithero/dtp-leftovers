@@ -7,17 +7,399 @@
 //   head = 'HEAD',
 // }
 
-// type TraitType = 'MOUTH' | 'FUR' | 'BODY' | 'GLASSES' | 'BACKGROUND' | 'HEAD';
-
-
+export type TraitType = 'background' | 'fur' | 'body' | 'head' | 'glasses' | 'mouth';
+export type IFilter = { id: string; name: string, options: ITraits2[] };
+export type IActiveFilter = { value: string; label: string };
 interface IAttributeData {
   trait_type: string;
   value: string;
 }
 
-export interface INFTData {
+export interface INFTData2 {
   id: number;
   name: string;
   image: string;
-  attributes: IAttributeData[];
+  background: string;
+  fur: string;
+  body: string;
+  head: string;
+  glasses: string;
+  mouth: string;
 }
+export interface ITraits2 {
+  type?: string;
+  value: string;
+  label: string;
+  rarity?: string;
+  checked: boolean;
+}
+
+// interface ITraits3 {
+//   value: string;
+//   label: string;
+//   checked: boolean;
+// }
+
+export const rarityTraits: ITraits2[] = [
+  { value: 'common',    label: 'Common',     checked: false },
+  { value: 'uncommon',  label: 'Uncommon',   checked: false },
+  { value: 'rare',      label: 'Rare',       checked: false },
+  { value: 'superRare', label: 'Super Rare', checked: false },
+  { value: 'mythic',    label: 'Mythic',     checked: false },
+];
+
+export const furTraits: ITraits2[] = [
+  { value: 'Black',          label: 'Black',          rarity: 'common',     checked: false },
+  { value: 'Blue',           label: 'Blue',           rarity: 'common',     checked: false },
+  { value: 'Brown',          label: 'Brown',          rarity: 'common',     checked: false },
+  { value: 'Green',          label: 'Green',          rarity: 'common',     checked: false },
+  { value: 'Purple',         label: 'Purple',         rarity: 'common',     checked: false },
+  { value: 'Red',            label: 'Red',            rarity: 'common',     checked: false },
+  { value: 'Scarred Black',  label: 'Scarred Black',  rarity: 'uncommon',   checked: false },
+  { value: 'Scarred Blue',   label: 'Scarred Blue',   rarity: 'uncommon',   checked: false },
+  { value: 'Scarred Brown',  label: 'Scarred Brown',  rarity: 'uncommon',   checked: false },
+  { value: 'Scarred Green',  label: 'Scarred Green',  rarity: 'uncommon',   checked: false },
+  { value: 'Scarred Purple', label: 'Scarred Purple', rarity: 'uncommon',   checked: false },
+  { value: 'Scarred Red',    label: 'Scarred Red',    rarity: 'uncommon',   checked: false },
+  { value: 'Antique',        label: 'Antique',        rarity: 'rare',       checked: false },
+  { value: 'Fox',            label: 'Fox',            rarity: 'rare',       checked: false },
+  { value: 'Gold',           label: 'Gold',           rarity: 'superRare', checked: false },
+  { value: 'Zombie',         label: 'Zombie',         rarity: 'superRare', checked: false },
+  { value: 'Acid Trip',      label: 'Acid Trip',      rarity: 'mythic',     checked: false },
+];
+
+export const headTraits: ITraits2[] = [
+  { value: 'Belt', label: 'Belt', rarity: 'common', checked: false },
+  { value: 'Cardboard Box', label: 'Cardboard Box', rarity: 'common', checked: false },
+  { value: 'Ice Cream', label: 'Ice Cream', rarity: 'common', checked: false },
+  { value: 'Lampshade', label: 'Lampshade', rarity: 'common', checked: false },
+  { value: 'Paint Can', label: 'Paint Can', rarity: 'common', checked: false },
+  { value: 'Pandos', label: 'Pandos', rarity: 'common', checked: false },
+  { value: 'Plunger', label: 'Plunger', rarity: 'common', checked: false },
+  { value: 'Pot', label: 'Pot', rarity: 'common', checked: false },
+  { value: 'Takeout', label: 'Takeout', rarity: 'common', checked: false },
+  { value: 'Tamberine', label: 'Tamberine', rarity: 'common', checked: false },
+  { value: 'Trash Lid', label: 'Trash Lid', rarity: 'common', checked: false },
+  { value: 'Beret', label: 'Beret', rarity: 'uncommon', checked: false },
+  { value: 'Boot', label: 'Boot', rarity: 'uncommon', checked: false },
+  { value: 'Colander', label: 'Colander', rarity: 'uncommon', checked: false },
+  { value: 'Headband', label: 'Headband', rarity: 'uncommon', checked: false },
+  { value: 'Paper Bag', label: 'Paper Bag', rarity: 'uncommon', checked: false },
+  { value: 'Pandas Pickles', label: 'Pandas Pickles', rarity: 'uncommon', checked: false },
+  { value: 'Pirate Hat', label: 'Pirate Hat', rarity: 'uncommon', checked: false },
+  { value: 'Road Cone', label: 'Road Cone', rarity: 'uncommon', checked: false },
+  { value: 'Trucker Cap', label: 'Trucker Cap', rarity: 'uncommon', checked: false },
+  { value: 'Beanie', label: 'Beanie', rarity: 'rare', checked: false },
+  { value: 'Degen Service Hat', label: 'Degen Service Hat', rarity: 'rare', checked: false },
+  { value: 'Flat Cap', label: 'Flat Cap', rarity: 'rare', checked: false },
+  { value: 'Sock', label: 'Sock', rarity: 'rare', checked: false },
+  { value: 'Sombrero', label: 'Sombrero', rarity: 'rare', checked: false },
+  { value: 'The Gambler', label: 'The Gambler', rarity: 'rare', checked: false },
+  { value: 'Tomato Soup', label: 'Tomato Soup', rarity: 'rare', checked: false },
+  { value: 'Crown', label: 'Crown', rarity: 'superRare', checked: false },
+  { value: 'Steampunk Hat', label: 'Steampunk Hat', rarity: 'superRare', checked: false },
+  { value: 'Unicorn Headband', label: 'Unicorn Headband', rarity: 'superRare', checked: false },
+  { value: 'Urn', label: 'Urn', rarity: 'superRare', checked: false },
+  { value: 'Space Helmet', label: 'Space Helmet', rarity: 'mythic', checked: false  }
+]
+
+export const bodyTraits: ITraits2[] = [
+  { value: 'Bandana', label: 'Bandana', rarity: 'common', checked: false },
+  { value: 'Bumbag', label: 'Bumbag', rarity: 'common', checked: false },
+  { value: 'Denim Vest', label: 'Denim Vest', rarity: 'common', checked: false },
+  { value: 'Dress Shirt', label: 'Dress Shirt', rarity: 'common', checked: false },
+  { value: 'Fishing Vest', label: 'Fishing Vest', rarity: 'common', checked: false },
+  { value: 'Hockey Pads', label: 'Hockey Pads', rarity: 'common', checked: false },
+  { value: 'Hoodie', label: 'Hoodie', rarity: 'common', checked: false },
+  { value: 'Knitted Vest', label: 'Knitted Vest', rarity: 'common', checked: false },
+  { value: 'Open Shirt', label: 'Open Shirt', rarity: 'common', checked: false },
+  { value: 'Overalls', label: 'Overalls', rarity: 'common', checked: false },
+  { value: 'Singlet', label: 'Singlet', rarity: 'common', checked: false },
+  { value: 'T-Shirt', label: 'T-Shirt', rarity: 'common', checked: false },
+  { value: 'Turtle Neck', label: 'Turtle Neck', rarity: 'common', checked: false },
+  { value: 'Chain', label: 'Chain', rarity: 'uncommon', checked: false },
+  { value: 'Engineer', label: 'Engineer', rarity: 'uncommon', checked: false },
+  { value: 'Fairy Wings', label: 'Fairy Wings', rarity: 'uncommon', checked: false },
+  { value: 'Football Jersey - Blue/White', label: 'Football Jersey - Blue/White', rarity: 'uncommon', checked: false },
+  { value: 'Football Jersey - Red/Blue', label: 'Football Jersey - Red/Blue', rarity: 'uncommon', checked: false },
+  { value: 'Leather Jacket', label: 'Leather Jacket', rarity: 'uncommon', checked: false },
+  { value: 'Mummy', label: 'Mummy', rarity: 'uncommon', checked: false },
+  { value: 'Rain Jacket', label: 'Rain Jacket', rarity: 'uncommon', checked: false },
+  { value: 'Xmas Sweater', label: 'Xmas Sweater', rarity: 'uncommon', checked: false },
+  { value: 'Chav Jacket', label: 'Chav Jacket', rarity: 'rare', checked: false },
+  { value: 'Crayon Farmer', label: 'Crayon Farmer', rarity: 'rare', checked: false },
+  { value: 'Degen Service Polo', label: 'Degen Service Polo', rarity: 'rare', checked: false },
+  { value: 'Designer Jacket', label: 'Designer Jacket', rarity: 'rare', checked: false },
+  { value: 'Down Jacket', label: 'Down Jacket', rarity: 'rare', checked: false },
+  { value: 'Slav Jacket', label: 'Slav Jacket', rarity: 'rare', checked: false },
+  { value: 'Toga', label: 'Toga', rarity: 'rare', checked: false },
+  { value: 'Vampire Cape', label: 'Vampire Cape', rarity: 'rare', checked: false },
+  { value: 'Blouse', label: 'Blouse', rarity: 'superRare', checked: false },
+  { value: 'Prom King', label: 'Prom King', rarity: 'superRare', checked: false },
+  { value: 'Spacesuit', label: 'Spacesuit', rarity: 'superRare', checked: false },
+  { value: 'Tweed Suit', label: 'Tweed Suit', rarity: 'superRare', checked: false },
+  { value: 'Admiral', label: 'Admiral', rarity: 'mythic', checked: false },
+]
+
+export const glassesTraits: ITraits2[] = [
+  { value: 'Designer Glasses', label: 'Designer Glasses', rarity: 'common', checked: false },
+  { value: 'Reading Glasses', label: 'Reading Glasses', rarity: 'common', checked: false },
+  { value: 'Swimming Goggles', label: 'Swimming Goggles', rarity: 'Unommon', checked: false },
+  { value: 'Trash Vipers', label: 'Trash Vipers', rarity: 'Unommon', checked: false },
+  { value: 'Snow Goggles', label: 'Snow Goggles', rarity: 'rare', checked: false },
+  { value: 'Star Glasses', label: 'Star Glasses', rarity: 'rare', checked: false },
+  { value: 'Monocle', label: 'Monocle', rarity: 'superRare', checked: false },
+]
+
+export const mouthTraits: ITraits2[] = [
+  { value: 'Bird Foot - Smirk', label: 'Bird Foot', rarity: 'common', checked: false },
+  { value: 'Bone - Grin', label: 'Bone', rarity: 'common', checked: false },
+  { value: 'Burnt Spoon - Smirk', label: 'Burnt Spoon', rarity: 'common', checked: false },
+  { value: 'Lollipop - Grin', label: 'Lollipop', rarity: 'common', checked: false },
+  { value: 'Match Stick - Smirk', label: 'Match Stick', rarity: 'common', checked: false },
+  { value: 'Rat Tail - Smirk', label: 'Rat Tail', rarity: 'common', checked: false },
+  { value: 'Acid - Grin', label: 'Acid', rarity: 'uncommon', checked: false },
+  { value: 'Cigarette - Smirk', label: 'Cigarette', rarity: 'uncommon', checked: false },
+  { value: 'Crayon Shiv - Smirk', label: 'Crayon Shiv', rarity: 'uncommon', checked: false },
+  { value: 'Dynamite - Grin', label: 'Dynamite', rarity: 'uncommon', checked: false },
+  { value: 'Cigar - Grin', label: 'Cigar', rarity: 'rare', checked: false },
+  { value: 'Smashed Bottle - Grin', label: 'Smashed Bottle', rarity: 'rare', checked: false },
+  { value: 'War Medal - Smirk', label: 'War Medal', rarity: 'rare', checked: false },
+  { value: 'Dirty Fiat - Grin', label: 'Dirty Fiat', rarity: 'superRare', checked: false },
+  { value: 'Joint - Smirk', label: 'Joint', rarity: 'superRare', checked: false },
+]
+
+export const allTraits: ITraits2[] = [
+  { type: 'fur', value: 'Black',          label: 'Black',          rarity: 'common',     checked: false },
+  { type: 'fur', value: 'Blue',           label: 'Blue',           rarity: 'common',     checked: false },
+  { type: 'fur', value: 'Brown',          label: 'Brown',          rarity: 'common',     checked: false },
+  { type: 'fur', value: 'Green',          label: 'Green',          rarity: 'common',     checked: false },
+  { type: 'fur', value: 'Purple',         label: 'Purple',         rarity: 'common',     checked: false },
+  { type: 'fur', value: 'Red',            label: 'Red',            rarity: 'common',     checked: false },
+  { type: 'fur', value: 'Scarred Black',  label: 'Scarred Black',  rarity: 'uncommon',   checked: false },
+  { type: 'fur', value: 'Scarred Blue',   label: 'Scarred Blue',   rarity: 'uncommon',   checked: false },
+  { type: 'fur', value: 'Scarred Brown',  label: 'Scarred Brown',  rarity: 'uncommon',   checked: false },
+  { type: 'fur', value: 'Scarred Green',  label: 'Scarred Green',  rarity: 'uncommon',   checked: false },
+  { type: 'fur', value: 'Scarred Purple', label: 'Scarred Purple', rarity: 'uncommon',   checked: false },
+  { type: 'fur', value: 'Scarred Red',    label: 'Scarred Red',    rarity: 'uncommon',   checked: false },
+  { type: 'fur', value: 'Antique',        label: 'Antique',        rarity: 'rare',       checked: false },
+  { type: 'fur', value: 'Fox',            label: 'Fox',            rarity: 'rare',       checked: false },
+  { type: 'fur', value: 'Gold',           label: 'Gold',           rarity: 'superRare', checked: false },
+  { type: 'fur', value: 'Zombie',         label: 'Zombie',         rarity: 'superRare', checked: false },
+  { type: 'fur', value: 'Acid Trip',      label: 'Acid Trip',      rarity: 'mythic',     checked: false },
+
+  { type: 'head', value: 'Belt', label: 'Belt', rarity: 'common', checked: false },
+  { type: 'head', value: 'Cardboard Box', label: 'Cardboard Box', rarity: 'common', checked: false },
+  { type: 'head', value: 'Ice Cream', label: 'Ice Cream', rarity: 'common', checked: false },
+  { type: 'head', value: 'Lampshade', label: 'Lampshade', rarity: 'common', checked: false },
+  { type: 'head', value: 'Paint Can', label: 'Paint Can', rarity: 'common', checked: false },
+  { type: 'head', value: 'Pandos', label: 'Pandos', rarity: 'common', checked: false },
+  { type: 'head', value: 'Plunger', label: 'Plunger', rarity: 'common', checked: false },
+  { type: 'head', value: 'Pot', label: 'Pot', rarity: 'common', checked: false },
+  { type: 'head', value: 'Takeout', label: 'Takeout', rarity: 'common', checked: false },
+  { type: 'head', value: 'Tamberine', label: 'Tamberine', rarity: 'common', checked: false },
+  { type: 'head', value: 'Trash Lid', label: 'Trash Lid', rarity: 'common', checked: false },
+  { type: 'head', value: 'Beret', label: 'Beret', rarity: 'uncommon', checked: false },
+  { type: 'head', value: 'Boot', label: 'Boot', rarity: 'uncommon', checked: false },
+  { type: 'head', value: 'Colander', label: 'Colander', rarity: 'uncommon', checked: false },
+  { type: 'head', value: 'Headband', label: 'Headband', rarity: 'uncommon', checked: false },
+  { type: 'head', value: 'Paper Bag', label: 'Paper Bag', rarity: 'uncommon', checked: false },
+  { type: 'head', value: 'Pandas Pickles', label: 'Pandas Pickles', rarity: 'uncommon', checked: false },
+  { type: 'head', value: 'Pirate Hat', label: 'Pirate Hat', rarity: 'uncommon', checked: false },
+  { type: 'head', value: 'Road Cone', label: 'Road Cone', rarity: 'uncommon', checked: false },
+  { type: 'head', value: 'Trucker Cap', label: 'Trucker Cap', rarity: 'uncommon', checked: false },
+  { type: 'head', value: 'Beanie', label: 'Beanie', rarity: 'rare', checked: false },
+  { type: 'head', value: 'Degen Service Hat', label: 'Degen Service Hat', rarity: 'rare', checked: false },
+  { type: 'head', value: 'Flat Cap', label: 'Flat Cap', rarity: 'rare', checked: false },
+  { type: 'head', value: 'Sock', label: 'Sock', rarity: 'rare', checked: false },
+  { type: 'head', value: 'Sombrero', label: 'Sombrero', rarity: 'rare', checked: false },
+  { type: 'head', value: 'The Gambler', label: 'The Gambler', rarity: 'rare', checked: false },
+  { type: 'head', value: 'Tomato Soup', label: 'Tomato Soup', rarity: 'rare', checked: false },
+  { type: 'head', value: 'Crown', label: 'Crown', rarity: 'superRare', checked: false },
+  { type: 'head', value: 'Steampunk Hat', label: 'Steampunk Hat', rarity: 'superRare', checked: false },
+  { type: 'head', value: 'Unicorn Headband', label: 'Unicorn Headband', rarity: 'superRare', checked: false },
+  { type: 'head', value: 'Urn', label: 'Urn', rarity: 'superRare', checked: false },
+  { type: 'head', value: 'Space Helmet', label: 'Space Helmet', rarity: 'mythic', checked: false  },
+
+  { type: 'body', value: 'Bandana', label: 'Bandana', rarity: 'common', checked: false },
+  { type: 'body', value: 'Bumbag', label: 'Bumbag', rarity: 'common', checked: false },
+  { type: 'body', value: 'Denim Vest', label: 'Denim Vest', rarity: 'common', checked: false },
+  { type: 'body', value: 'Dress Shirt', label: 'Dress Shirt', rarity: 'common', checked: false },
+  { type: 'body', value: 'Fishing Vest', label: 'Fishing Vest', rarity: 'common', checked: false },
+  { type: 'body', value: 'Hockey Pads', label: 'Hockey Pads', rarity: 'common', checked: false },
+  { type: 'body', value: 'Hoodie', label: 'Hoodie', rarity: 'common', checked: false },
+  { type: 'body', value: 'Knitted Vest', label: 'Knitted Vest', rarity: 'common', checked: false },
+  { type: 'body', value: 'Open Shirt', label: 'Open Shirt', rarity: 'common', checked: false },
+  { type: 'body', value: 'Overalls', label: 'Overalls', rarity: 'common', checked: false },
+  { type: 'body', value: 'Singlet', label: 'Singlet', rarity: 'common', checked: false },
+  { type: 'body', value: 'T-Shirt', label: 'T-Shirt', rarity: 'common', checked: false },
+  { type: 'body', value: 'Turtle Neck', label: 'Turtle Neck', rarity: 'common', checked: false },
+  { type: 'body', value: 'Chain', label: 'Chain', rarity: 'uncommon', checked: false },
+  { type: 'body', value: 'Engineer', label: 'Engineer', rarity: 'uncommon', checked: false },
+  { type: 'body', value: 'Fairy Wings', label: 'Fairy Wings', rarity: 'uncommon', checked: false },
+  { type: 'body', value: 'Football Jersey - Blue/White', label: 'Football Jersey - Blue/White', rarity: 'uncommon', checked: false },
+  { type: 'body', value: 'Football Jersey - Red/Blue', label: 'Football Jersey - Red/Blue', rarity: 'uncommon', checked: false },
+  { type: 'body', value: 'Leather Jacket', label: 'Leather Jacket', rarity: 'uncommon', checked: false },
+  { type: 'body', value: 'Mummy', label: 'Mummy', rarity: 'uncommon', checked: false },
+  { type: 'body', value: 'Rain Jacket', label: 'Rain Jacket', rarity: 'uncommon', checked: false },
+  { type: 'body', value: 'Xmas Sweater', label: 'Xmas Sweater', rarity: 'uncommon', checked: false },
+  { type: 'body', value: 'Chav Jacket', label: 'Chav Jacket', rarity: 'rare', checked: false },
+  { type: 'body', value: 'Crayon Farmer', label: 'Crayon Farmer', rarity: 'rare', checked: false },
+  { type: 'body', value: 'Degen Service Polo', label: 'Degen Service Polo', rarity: 'rare', checked: false },
+  { type: 'body', value: 'Designer Jacket', label: 'Designer Jacket', rarity: 'rare', checked: false },
+  { type: 'body', value: 'Down Jacket', label: 'Down Jacket', rarity: 'rare', checked: false },
+  { type: 'body', value: 'Slav Jacket', label: 'Slav Jacket', rarity: 'rare', checked: false },
+  { type: 'body', value: 'Toga', label: 'Toga', rarity: 'rare', checked: false },
+  { type: 'body', value: 'Vampire Cape', label: 'Vampire Cape', rarity: 'rare', checked: false },
+  { type: 'body', value: 'Blouse', label: 'Blouse', rarity: 'superRare', checked: false },
+  { type: 'body', value: 'Prom King', label: 'Prom King', rarity: 'superRare', checked: false },
+  { type: 'body', value: 'Spacesuit', label: 'Spacesuit', rarity: 'superRare', checked: false },
+  { type: 'body', value: 'Tweed Suit', label: 'Tweed Suit', rarity: 'superRare', checked: false },
+  { type: 'body', value: 'Admiral', label: 'Admiral', rarity: 'mythic', checked: false },
+
+  { type: 'glasses', value: 'Designer Glasses', label: 'Designer Glasses', rarity: 'common', checked: false },
+  { type: 'glasses', value: 'Reading Glasses', label: 'Reading Glasses', rarity: 'common', checked: false },
+  { type: 'glasses', value: 'Swimming Goggles', label: 'Swimming Goggles', rarity: 'Unommon', checked: false },
+  { type: 'glasses', value: 'Trash Vipers', label: 'Trash Vipers', rarity: 'Unommon', checked: false },
+  { type: 'glasses', value: 'Snow Goggles', label: 'Snow Goggles', rarity: 'rare', checked: false },
+  { type: 'glasses', value: 'Star Glasses', label: 'Star Glasses', rarity: 'rare', checked: false },
+  { type: 'glasses', value: 'Monocle', label: 'Monocle', rarity: 'superRare', checked: false },
+
+  { type: 'mouth', value: 'Bird Foot - Smirk', label: 'Bird Foot', rarity: 'common', checked: false },
+  { type: 'mouth', value: 'Bone - Grin', label: 'Bone', rarity: 'common', checked: false },
+  { type: 'mouth', value: 'Burnt Spoon - Smirk', label: 'Burnt Spoon', rarity: 'common', checked: false },
+  { type: 'mouth', value: 'Lollipop - Grin', label: 'Lollipop', rarity: 'common', checked: false },
+  { type: 'mouth', value: 'Match Stick - Smirk', label: 'Match Stick', rarity: 'common', checked: false },
+  { type: 'mouth', value: 'Rat Tail - Smirk', label: 'Rat Tail', rarity: 'common', checked: false },
+  { type: 'mouth', value: 'Acid - Grin', label: 'Acid', rarity: 'uncommon', checked: false },
+  { type: 'mouth', value: 'Cigarette - Smirk', label: 'Cigarette', rarity: 'uncommon', checked: false },
+  { type: 'mouth', value: 'Crayon Shiv - Smirk', label: 'Crayon Shiv', rarity: 'uncommon', checked: false },
+  { type: 'mouth', value: 'Dynamite - Grin', label: 'Dynamite', rarity: 'uncommon', checked: false },
+  { type: 'mouth', value: 'Cigar - Grin', label: 'Cigar', rarity: 'rare', checked: false },
+  { type: 'mouth', value: 'Smashed Bottle - Grin', label: 'Smashed Bottle', rarity: 'rare', checked: false },
+  { type: 'mouth', value: 'War Medal - Smirk', label: 'War Medal', rarity: 'rare', checked: false },
+  { type: 'mouth', value: 'Dirty Fiat - Grin', label: 'Dirty Fiat', rarity: 'superRare', checked: false },
+  { type: 'mouth', value: 'Joint - Smirk', label: 'Joint', rarity: 'superRare', checked: false },
+]
+
+
+// export const readonlyFurTraits: readonly ITraits[] = [
+//   { name: 'Black', rarity: 'common' },
+//   { name: 'Blue', rarity: 'common' },
+//   { name: 'Brown', rarity: 'common' },
+//   { name: 'Green', rarity: 'common' },
+//   { name: 'Purple', rarity: 'common' },
+//   { name: 'Red', rarity: 'common' },
+//   { name: 'Black Scarred', rarity: 'uncommon' },
+//   { name: 'Blue Scarred', rarity: 'uncommon' },
+//   { name: 'Brown Scarred', rarity: 'uncommon' },
+//   { name: 'Green Scarred', rarity: 'uncommon' },
+//   { name: 'Purple Scarred', rarity: 'uncommon' },
+//   { name: 'Red Scarred', rarity: 'uncommon' },
+//   { name: 'Antique', rarity: 'rare' },
+//   { name: 'Fox', rarity: 'rare' },
+//   { name: 'Gold', rarity: 'superRare' },
+//   { name: 'Zombie', rarity: 'superRare' },
+//   { name: 'Acid Trip', rarity: 'mythic' },
+// ];
+
+// export const readonlyHeadTraits: readonly ITraits[] = [
+//   { name: 'Belt', rarity: 'common' },
+//   { name: 'Cardboard Box', rarity: 'common' },
+//   { name: 'Ice Cream', rarity: 'common' },
+//   { name: 'Lampshade', rarity: 'common' },
+//   { name: 'Paint Can', rarity: 'common' },
+//   { name: 'Pandos', rarity: 'common' },
+//   { name: 'Plunger', rarity: 'common' },
+//   { name: 'Pot', rarity: 'common' },
+//   { name: 'Takeout', rarity: 'common' },
+//   { name: 'Tamberine', rarity: 'common' },
+//   { name: 'Trash Lid', rarity: 'common' },
+//   { name: 'Beret', rarity: 'uncommon' },
+//   { name: 'Boot', rarity: 'uncommon' },
+//   { name: 'Colander', rarity: 'uncommon' },
+//   { name: 'Headband', rarity: 'uncommon' },
+//   { name: 'Paper Bag', rarity: 'uncommon' },
+//   { name: 'Pandas Pickles', rarity: 'uncommon' },
+//   { name: 'Pirate Hat', rarity: 'uncommon' },
+//   { name: 'Road Cone', rarity: 'uncommon' },
+//   { name: 'Trucker Cap', rarity: 'uncommon' },
+//   { name: 'Beanie', rarity: 'rare' },
+//   { name: 'Degen Service Hat', rarity: 'rare' },
+//   { name: 'Flat Cap', rarity: 'rare' },
+//   { name: 'Sock', rarity: 'rare' },
+//   { name: 'Sombrero', rarity: 'rare' },
+//   { name: 'The Gambler', rarity: 'rare' },
+//   { name: 'Tomato Soup', rarity: 'rare' },
+//   { name: 'Crown', rarity: 'superRare' },
+//   { name: 'Steampunk Hat', rarity: 'superRare' },
+//   { name: 'Unicorn Headband', rarity: 'superRare' },
+//   { name: 'Urn', rarity: 'superRare' },
+//   { name: 'Space Helmet', rarity: 'mythic' }
+// ]
+
+// export const readonlyBodyTraits: readonly ITraits[] = [
+//   { name: 'Bandana', rarity: 'common' },
+//   { name: 'Bumbag', rarity: 'common' },
+//   { name: 'Denim Vest', rarity: 'common' },
+//   { name: 'Dress Shirt', rarity: 'common' },
+//   { name: 'Fishing Vest', rarity: 'common' },
+//   { name: 'Hockey Pads', rarity: 'common' },
+//   { name: 'Hoodie', rarity: 'common' },
+//   { name: 'Knitted Vest', rarity: 'common' },
+//   { name: 'Open Shirt', rarity: 'common' },
+//   { name: 'Overalls', rarity: 'common' },
+//   { name: 'Singlet', rarity: 'common' },
+//   { name: 'T-Shirt', rarity: 'common' },
+//   { name: 'Turtle Neck', rarity: 'common' },
+//   { name: 'Chain', rarity: 'uncommon' },
+//   { name: 'Engineer', rarity: 'uncommon' },
+//   { name: 'Fairy Wings', rarity: 'uncommon' },
+//   { name: 'Football Jersey - Blue/White', rarity: 'uncommon' },
+//   { name: 'Football Jersey - Red/Blue', rarity: 'uncommon' },
+//   { name: 'Leather Jacket', rarity: 'uncommon' },
+//   { name: 'Mummy', rarity: 'uncommon' },
+//   { name: 'Rain Jacket', rarity: 'uncommon' },
+//   { name: 'Xmas Sweater', rarity: 'uncommon' },
+//   { name: 'Chav Jacket', rarity: 'rare' },
+//   { name: 'Crayon Farmer', rarity: 'rare' },
+//   { name: 'Degen Service Polo', rarity: 'rare' },
+//   { name: 'Designer Jacket', rarity: 'rare' },
+//   { name: 'Down Jacket', rarity: 'rare' },
+//   { name: 'Slav Jacket', rarity: 'rare' },
+//   { name: 'Toga', rarity: 'rare' },
+//   { name: 'Vampire Cape', rarity: 'rare' },
+//   { name: 'Blouse', rarity: 'superRare' },
+//   { name: 'Prom King', rarity: 'superRare' },
+//   { name: 'Spacesuit', rarity: 'superRare' },
+//   { name: 'Tweed Suit', rarity: 'superRare' },
+//   { name: 'Admiral', rarity: 'mythic' },
+// ]
+
+// export const readonlyGlassesTraits: readonly ITraits[] = [
+//   { name: 'Designer Glasses', rarity: 'common' },
+//   { name: 'Reading Glasses', rarity: 'common' },
+//   { name: 'Swimming Goggles', rarity: 'Unommon' },
+//   { name: 'Trash Vipers', rarity: 'Unommon' },
+//   { name: 'Snow Goggles', rarity: 'rare' },
+//   { name: 'Star Glasses', rarity: 'rare' },
+//   { name: 'Monocle', rarity: 'superRare' }
+// ]
+
+// export const readonlyMouthTraits: readonly ITraits[] = [
+//   { name: 'Bird Foot - Smirk', rarity: 'common' },
+//   { name: 'Bone - Grin', rarity: 'common' },
+//   { name: 'Burnt Spoon - Smirk', rarity: 'common' },
+//   { name: 'Lollipop - Grin', rarity: 'common' },
+//   { name: 'Match Stick - Smirk', rarity: 'common' },
+//   { name: 'Rat Tail - Smirk', rarity: 'common' },
+//   { name: 'Acid - Grin', rarity: 'uncommon' },
+//   { name: 'Cigarette - Smirk', rarity: 'uncommon' },
+//   { name: 'Crayon Shiv - Smirk', rarity: 'uncommon' },
+//   { name: 'Dynamite - Grin', rarity: 'uncommon' },
+//   { name: 'Cigar - Grin', rarity: 'rare' },
+//   { name: 'Smashed Bottle - Grin', rarity: 'rare' },
+//   { name: 'War Medal - Smirk', rarity: 'rare' },
+//   { name: 'Dirty Fiat - Grin', rarity: 'superRare' },
+//   { name: 'Joint - Smirk', rarity: 'superRare' },
+// ]
