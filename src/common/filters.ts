@@ -1,7 +1,15 @@
-import { reactive } from "vue";
-import { ITraits2, furTraits, headTraits, bodyTraits, glassesTraits, mouthTraits, rarityTraits } from "./types";
+import { reactive } from 'vue';
+import {
+  ITraits2,
+  furTraits,
+  headTraits,
+  bodyTraits,
+  glassesTraits,
+  mouthTraits,
+  rarityTraits,
+} from './types';
 
-type IFilter = { id: string; name: string, options: ITraits2[] };
+type IFilter = { id: string; name: string; options: ITraits2[] };
 
 export const filters: IFilter[] = reactive([
   {
@@ -34,4 +42,4 @@ export const filters: IFilter[] = reactive([
     name: 'Rarity',
     options: rarityTraits,
   },
-])
+]);

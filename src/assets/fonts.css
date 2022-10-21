@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+@font-face {
+  font-family: "Splatter Kings";
+  src: local("Splatter Kings"),
+    url(~@/assets/fonts/splatter_kings/Splatter-Kings.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "TT Commons Bold";
+  src: local("TT Commons Bold"),
+    url(~@/assets/fonts/tt-commons/TT-Commons-Bold.otf) format("opentype");
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.font-space-grotesk {
+  font-family: 'Space Grotesk', sans-serif !important;
+}
+
+.font-tt-commons-bold {
+  font-family: "TT Commons Bold", Helvetica, Arial !important;
+}
+
+.font-splatter-kings {
+  font-family: "Splatter Kings", Helvetica, Arial !important;
+}

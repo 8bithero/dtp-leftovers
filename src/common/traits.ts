@@ -1,4 +1,4 @@
-export enum ETraitTypes { 
+export enum ETraitTypes {
   background = 'background',
   fur = 'fur',
   body = 'body',
@@ -8,7 +8,7 @@ export enum ETraitTypes {
   rarity = 'rarity',
 }
 
-export enum ERarityType { 
+export enum ERarityType {
   common = 'common',
   uncommon = 'uncommon',
   rare = 'rare',
@@ -19,9 +19,12 @@ export enum ERarityType {
 export type STraitTypes = keyof typeof ETraitTypes; 
 export type SRarityType = keyof typeof ERarityType; 
 
-  
 // export type RarityType = 'common' | 'uncommon' | 'rare' | 'superRare' | 'mythic';
-export type IFilterGroup = { id: STraitTypes; name: string, options: ITraits[] };
+export type IFilterGroup = {
+  id: STraitTypes;
+  name: string;
+  options: ITraits[];
+};
 export type IActiveFilter = { value: string; label: string };
 interface IAttributeData {
   trait_type: string;
