@@ -1,4 +1,8 @@
-![TrashPandas](./public/img/WordLogoDark.png)
+<img src="./public/img/WordLogoDark.png" width=75%>
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5637e803-a6b0-4b3e-a9ff-af0548b0060f/deploy-status)](https://app.netlify.com/sites/dtp-leftovers/deploys)
+
+You can access a live version at [dtp-leftovers.netlify.app](https://dtp-leftovers.netlify.app/).
 
 # Trash Panda Leftovers 🗑️🦝
 Trash Panda Leftovers is a community built tool which shows you the probability of minting any of the 'leftover' [Degenerate Trash Panda](https://degentrashpandas.com/) in the collection that have yet to be minted.
