@@ -13,7 +13,7 @@ export default async function useMintChecker() {
   const NFTs = ref<any[]>([]);
   const NFTsMini = ref<any[]>([]);
   const conn = new Connection(
-    process.env.RPC_SERVER_URL as string,
+    process.env.VUE_APP_RPC_SERVER_URL as string,
     'confirmed'
   );
 
