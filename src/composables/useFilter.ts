@@ -1,4 +1,4 @@
-import { STraitTypes } from '@/common/traits';
+import { STraitTypes } from '@/common/types';
 
 export function useFilter() {
   const classList = {

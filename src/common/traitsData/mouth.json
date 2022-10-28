@@ -1,0 +1,107 @@
+[
+  {
+    "type": "mouth",
+    "value": "Bird Foot - Smirk",
+    "label": "Bird Foot",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Bone - Grin",
+    "label": "Bone",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Burnt Spoon - Smirk",
+    "label": "Burnt Spoon",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Lollipop - Grin",
+    "label": "Lollipop",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Match Stick - Smirk",
+    "label": "Match Stick",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Rat Tail - Smirk",
+    "label": "Rat Tail",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Acid - Grin",
+    "label": "Acid",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Cigarette - Smirk",
+    "label": "Cigarette",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Crayon Shiv - Smirk",
+    "label": "Crayon Shiv",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Dynamite - Grin",
+    "label": "Dynamite",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Cigar - Grin",
+    "label": "Cigar",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Smashed Bottle - Grin",
+    "label": "Smashed Bottle",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "War Medal - Smirk",
+    "label": "War Medal",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Dirty Fiat - Grin",
+    "label": "Dirty Fiat",
+    "rarity": "superRare",
+    "checked": false
+  },
+  {
+    "type": "mouth",
+    "value": "Joint - Smirk",
+    "label": "Joint",
+    "rarity": "superRare",
+    "checked": false
+  }
+]

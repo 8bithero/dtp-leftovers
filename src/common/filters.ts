@@ -1,17 +1,22 @@
 import { reactive } from 'vue';
+import { IFilter } from './types';
+
 import {
-  ITraits2,
+  backgroundTraits,
+  bodyTraits,
   furTraits,
   headTraits,
-  bodyTraits,
   glassesTraits,
   mouthTraits,
   rarityTraits,
-} from './types';
-
-type IFilter = { id: string; name: string; options: ITraits2[] };
+} from './traitsData';
 
 export const filters: IFilter[] = reactive([
+  {
+    id: 'background',
+    name: 'Background',
+    options: backgroundTraits,
+  },
   {
     id: 'fur',
     name: 'Fur',

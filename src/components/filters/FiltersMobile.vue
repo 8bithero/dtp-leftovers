@@ -56,13 +56,15 @@
               class="border-t-2 border-mine-shaft bg-white last:border-b-2"
             >
               <h3
-                class="flow-root bg-white px-2 py-3"
+                class="flow-root px-2 py-3"
                 :class="filterHelper.buttonBackgroundClasses(section.id)"
               >
                 <DisclosureButton
                   class="cursor-big-pointer font-space-grotesk flex w-full items-center justify-between px-2 py-3 text-sm text-mine-shaft decoration-wavy underline-offset-8"
                   :class="[
-                    hasActiveFilter(section.id) ? 'underline' : 'no-underline',
+                    hasActiveFilter(section.options)
+                      ? 'underline'
+                      : 'no-underline',
                   ]"
                 >
                   <span class="font-medium text-mine-shaft">
@@ -124,15 +126,15 @@ import {
 import { XMarkIcon } from '@heroicons/vue/24/outline';
 import { ChevronDownIcon } from '@heroicons/vue/20/solid';
 import { useFilter } from '@/composables/useFilter';
+import { IFilter, ITraits } from '@/common/types';
 
-const props = defineProps([
-  'filters',
-  'activeFilterValuesByTrait',
-  'toggleMobileFiltersOpen',
-]);
+const props = defineProps<{
+  filters: IFilter[];
+  toggleMobileFiltersOpen: void;
+}>();
 
 const filterHelper = useFilter();
 
-const hasActiveFilter = (id: number): boolean =>
-  !!(props.activeFilterValuesByTrait && props.activeFilterValuesByTrait[id]);
+const hasActiveFilter = (options: ITraits[]): boolean =>
+  options.some((o) => o.checked);
 </script>

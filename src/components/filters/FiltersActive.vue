@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="bg-gray-100 zig-zag"> -->
   <div class="zig-zag">
     <div
       class="mx-auto max-w-7xl px-4 pb-3 pt-4 sm:flex sm:items-center sm:px-6 md:pb-0.5 lg:px-8"
@@ -19,7 +18,7 @@
       <div class="mt-2 sm:mt-0 sm:ml-4">
         <div class="-m-1 flex flex-wrap items-center">
           <span
-            v-for="activeFilter in props.activeFilters"
+            v-for="activeFilter in activeFilterEntries"
             :key="activeFilter.value"
             class="m-1 inline-flex items-center rounded-full border-2 border-gray-200 bg-white py-1.5 pl-3 pr-2 text-sm font-medium text-gray-900"
             :class="[borderColourSelector(activeFilter.type)]"
@@ -54,7 +53,12 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps(['activeFilters']);
+import { IActiveFilter, IAttribute, STraitTypes } from '@/common/types';
+import { computed } from 'vue';
+
+const props = defineProps<{
+  activeFilters: IActiveFilter;
+}>();
 
 const borderColourSelector = (traitType: string) => {
   let colours = {
@@ -65,10 +69,14 @@ const borderColourSelector = (traitType: string) => {
     glasses: 'border-dark-orange',
     mouth: 'border-bitter-lemon',
     rarity: 'border-sea-green-crayola',
-  } as any;
+  } as IAttribute;
 
-  return colours[traitType];
+  return colours[traitType as STraitTypes];
 };
+
+const activeFilterEntries = computed(() =>
+  Object.values(props.activeFilters).flat()
+);
 </script>
 
 <style>

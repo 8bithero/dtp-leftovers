@@ -1,0 +1,51 @@
+[
+  {
+    "type": "glasses",
+    "value": "Designer Glasses",
+    "label": "Designer Glasses",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "glasses",
+    "value": "Reading Glasses",
+    "label": "Reading Glasses",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "glasses",
+    "value": "Swimming Goggles",
+    "label": "Swimming Goggles",
+    "rarity": "Unommon",
+    "checked": false
+  },
+  {
+    "type": "glasses",
+    "value": "Trash Vipers",
+    "label": "Trash Vipers",
+    "rarity": "Unommon",
+    "checked": false
+  },
+  {
+    "type": "glasses",
+    "value": "Snow Goggles",
+    "label": "Snow Goggles",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "glasses",
+    "value": "Star Glasses",
+    "label": "Star Glasses",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "glasses",
+    "value": "Monocle",
+    "label": "Monocle",
+    "rarity": "superRare",
+    "checked": false
+  }
+]

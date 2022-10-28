@@ -66,7 +66,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, defineProps, onMounted, ref } from "vue";
+import { computed, onMounted, ref } from 'vue';
 
 const props = defineProps({
   nftCount: { type: Number, default: 0 },
@@ -77,16 +77,20 @@ onMounted(() => {
 });
 
 const tokenPrice = ref<number>(0);
-const mintedPercentage = computed(() => Math.round((1 - props.nftCount / 20000) * 100));
+const mintedPercentage = computed(() =>
+  Math.round((1 - props.nftCount / 20000) * 100)
+);
 
 const fetchTokenPrice = async () => {
   fetch(
-    "https://open-api.dexlab.space/v1/orderbooks/8asEGhUfV4gqazSw5EFqKzqaBRd7A27T3a9fADqB7Fvm"
+    'https://open-api.dexlab.space/v1/orderbooks/8asEGhUfV4gqazSw5EFqKzqaBRd7A27T3a9fADqB7Fvm'
   )
     .then((response) => response.json())
-    .then((responseJson) => (tokenPrice.value = responseJson?.data?.lastOrderPrice))
+    .then(
+      (responseJson) => (tokenPrice.value = responseJson?.data?.lastOrderPrice)
+    )
     .catch((error) => {
-      console.log("error: ", error);
+      console.log('error: ', error);
     });
 };
 
@@ -94,7 +98,7 @@ const numberFormater = (number: number) =>
   number.toLocaleString(undefined, { maximumSignificantDigits: 2 });
 
 const currencyFormater = (price: number) =>
-  price.toLocaleString("en", { style: "currency", currency: "SOL" });
+  price.toLocaleString('en', { style: 'currency', currency: 'SOL' });
 </script>
 
 <style scoped lang="scss">
@@ -233,7 +237,7 @@ $rotation: -3deg;
   position: relative;
 
   &:after {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     z-index: -1;
@@ -250,7 +254,7 @@ $rotation: -3deg;
     align-items: flex-end;
     justify-content: space-around;
     padding-bottom: 8px;
-    font-family: "Space Grotesk", sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
   }
 
   &:hover {
@@ -274,7 +278,7 @@ $rotation: -3deg;
 
   &:before,
   &:after {
-    content: "";
+    content: '';
     display: block;
     border-radius: 50%;
     position: absolute;
@@ -376,10 +380,10 @@ $rotation: -3deg;
 }
 
 .card-inner.buy-token::after {
-  content: "Click to buy";
+  content: 'Click to buy';
 }
 
 .card-inner.mint-token::after {
-  content: "Click to mint";
+  content: 'Click to mint';
 }
 </style>
