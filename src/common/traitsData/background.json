@@ -1,0 +1,44 @@
+[
+  {
+    "type": "background",
+    "value": "Black",
+    "label": "Black",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "background",
+    "value": "Blue",
+    "label": "Blue",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "background",
+    "value": "Green",
+    "label": "Green",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "background",
+    "value": "Purple",
+    "label": "Purple",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "background",
+    "value": "Red",
+    "label": "Red",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "background",
+    "value": "Yellow",
+    "label": "Yellow",
+    "rarity": "common",
+    "checked": false
+  }
+]

@@ -1,0 +1,121 @@
+[
+  {
+    "type": "fur",
+    "value": "Black",
+    "label": "Black",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Blue",
+    "label": "Blue",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Brown",
+    "label": "Brown",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Green",
+    "label": "Green",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Purple",
+    "label": "Purple",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Red",
+    "label": "Red",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Scarred Black",
+    "label": "Scarred Black",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Scarred Blue",
+    "label": "Scarred Blue",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Scarred Brown",
+    "label": "Scarred Brown",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Scarred Green",
+    "label": "Scarred Green",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Scarred Purple",
+    "label": "Scarred Purple",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Scarred Red",
+    "label": "Scarred Red",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Antique",
+    "label": "Antique",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Fox",
+    "label": "Fox",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Gold",
+    "label": "Gold",
+    "rarity": "superRare",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Zombie",
+    "label": "Zombie",
+    "rarity": "superRare",
+    "checked": false
+  },
+  {
+    "type": "fur",
+    "value": "Acid Trip",
+    "label": "Acid Trip",
+    "rarity": "mythic",
+    "checked": false
+  }
+]

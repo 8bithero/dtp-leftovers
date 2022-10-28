@@ -1,0 +1,247 @@
+[
+  {
+    "type": "body",
+    "value": "Bandana",
+    "label": "Bandana",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Bumbag",
+    "label": "Bumbag",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Denim Vest",
+    "label": "Denim Vest",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Dress Shirt",
+    "label": "Dress Shirt",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Fishing Vest",
+    "label": "Fishing Vest",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Hockey Pads",
+    "label": "Hockey Pads",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Hoodie",
+    "label": "Hoodie",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Knitted Vest",
+    "label": "Knitted Vest",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Open Shirt",
+    "label": "Open Shirt",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Overalls",
+    "label": "Overalls",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Singlet",
+    "label": "Singlet",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "T-Shirt",
+    "label": "T-Shirt",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Turtle Neck",
+    "label": "Turtle Neck",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Chain",
+    "label": "Chain",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Engineer",
+    "label": "Engineer",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Fairy Wings",
+    "label": "Fairy Wings",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Football Jersey - Blue/White",
+    "label": "Football Jersey - Blue/White",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Football Jersey - Red/Blue",
+    "label": "Football Jersey - Red/Blue",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Leather Jacket",
+    "label": "Leather Jacket",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Mummy",
+    "label": "Mummy",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Rain Jacket",
+    "label": "Rain Jacket",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Xmas Sweater",
+    "label": "Xmas Sweater",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Chav Jacket",
+    "label": "Chav Jacket",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Crayon Farmer",
+    "label": "Crayon Farmer",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Degen Service Polo",
+    "label": "Degen Service Polo",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Designer Jacket",
+    "label": "Designer Jacket",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Down Jacket",
+    "label": "Down Jacket",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Slav Jacket",
+    "label": "Slav Jacket",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Toga",
+    "label": "Toga",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Vampire Cape",
+    "label": "Vampire Cape",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Blouse",
+    "label": "Blouse",
+    "rarity": "superRare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Prom King",
+    "label": "Prom King",
+    "rarity": "superRare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Spacesuit",
+    "label": "Spacesuit",
+    "rarity": "superRare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Tweed Suit",
+    "label": "Tweed Suit",
+    "rarity": "superRare",
+    "checked": false
+  },
+  {
+    "type": "body",
+    "value": "Admiral",
+    "label": "Admiral",
+    "rarity": "mythic",
+    "checked": false
+  }
+]

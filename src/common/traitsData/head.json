@@ -1,0 +1,226 @@
+[
+  {
+    "type": "head",
+    "value": "Belt",
+    "label": "Belt",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Cardboard Box",
+    "label": "Cardboard Box",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Ice Cream",
+    "label": "Ice Cream",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Lampshade",
+    "label": "Lampshade",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Paint Can",
+    "label": "Paint Can",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Pandos",
+    "label": "Pandos",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Plunger",
+    "label": "Plunger",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Pot",
+    "label": "Pot",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Takeout",
+    "label": "Takeout",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Tamberine",
+    "label": "Tamberine",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Trash Lid",
+    "label": "Trash Lid",
+    "rarity": "common",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Beret",
+    "label": "Beret",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Boot",
+    "label": "Boot",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Colander",
+    "label": "Colander",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Headband",
+    "label": "Headband",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Paper Bag",
+    "label": "Paper Bag",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Pandas Pickles",
+    "label": "Pandas Pickles",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Pirate Hat",
+    "label": "Pirate Hat",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Road Cone",
+    "label": "Road Cone",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Trucker Cap",
+    "label": "Trucker Cap",
+    "rarity": "uncommon",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Beanie",
+    "label": "Beanie",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Degen Service Hat",
+    "label": "Degen Service Hat",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Flat Cap",
+    "label": "Flat Cap",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Sock",
+    "label": "Sock",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Sombrero",
+    "label": "Sombrero",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "The Gambler",
+    "label": "The Gambler",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Tomato Soup",
+    "label": "Tomato Soup",
+    "rarity": "rare",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Crown",
+    "label": "Crown",
+    "rarity": "superRare",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Steampunk Hat",
+    "label": "Steampunk Hat",
+    "rarity": "superRare",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Unicorn Headband",
+    "label": "Unicorn Headband",
+    "rarity": "superRare",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Urn",
+    "label": "Urn",
+    "rarity": "superRare",
+    "checked": false
+  },
+  {
+    "type": "head",
+    "value": "Space Helmet",
+    "label": "Space Helmet",
+    "rarity": "mythic",
+    "checked": false
+  }
+]

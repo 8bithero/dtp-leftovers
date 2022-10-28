@@ -1,0 +1,17 @@
+[
+  { "type": "rarity", "value": "common", "label": "Common", "checked": false },
+  {
+    "type": "rarity",
+    "value": "uncommon",
+    "label": "Uncommon",
+    "checked": false
+  },
+  { "type": "rarity", "value": "rare", "label": "Rare", "checked": false },
+  {
+    "type": "rarity",
+    "value": "superRare",
+    "label": "Super Rare",
+    "checked": false
+  },
+  { "type": "rarity", "value": "mythic", "label": "Mythic", "checked": false }
+]

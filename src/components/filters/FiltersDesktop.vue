@@ -19,7 +19,7 @@
                   open
                     ? 'translate-x-[2px] translate-y-[2px] bg-linen !shadow-[2px_2px_0]'
                     : filterHelper.buttonBackgroundClasses(section.id),
-                  hasActiveFilter(section.id)
+                  hasActiveFilter(section.options)
                     ? [
                         filterHelper.buttonUnderlineClasses(section.id),
                         '!bg-linen',
@@ -108,12 +108,6 @@
                                         filterHelper.checkBoxClasses(section.id)
                                       "
                                       class="cursor-big-pointer h-6 w-6 border-mine-shaft"
-                                      @input="
-                                        $emit(
-                                          'update:option.checked',
-                                          $event.target.value
-                                        )
-                                      "
                                     />
                                     <span
                                       class="ml-3 h-full text-gray-700 group-hover:text-zinc-200"
@@ -149,20 +143,22 @@ import {
 import { ChevronDownIcon } from '@heroicons/vue/20/solid';
 import { camelCaseToTitleCase, groupBy } from '@/common/formatters';
 import { useFilter } from '@/composables/useFilter';
+import { IFilter, ITraits } from '@/common/types';
 
-const props = defineProps(['activeFilterValuesByTrait', 'filters']);
+const props = defineProps<{
+  filters: IFilter[];
+}>();
 
 const filterHelper = useFilter();
 
-const groupOptions = (options: any[]) => groupBy(options, (i) => i.rarity);
+const groupOptions = (options: ITraits[]) =>
+  groupBy(options, (i) => i.rarity || 'unGrouped');
 
-const hasMultipleRarities = (options: any[]): boolean => {
-  const uniqueAges = [...new Set(options.map((obj) => obj?.rarity))];
-  return uniqueAges.length > 1;
-};
+const hasMultipleRarities = (options: ITraits[]): boolean =>
+  [...new Set(options.map((obj) => obj?.rarity))].length > 1;
 
-const hasActiveFilter = (id: number): boolean =>
-  !!(props.activeFilterValuesByTrait && props.activeFilterValuesByTrait[id]);
+const hasActiveFilter = (options: ITraits[]): boolean =>
+  options.some((o) => o.checked);
 </script>
 
 <style scoped lang="scss"></style>

@@ -32,7 +32,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, defineProps, ref, watchEffect } from 'vue';
+import { computed, ref, watchEffect } from 'vue';
 
 const props = defineProps({
   nftCount: { type: Number, default: 0 },

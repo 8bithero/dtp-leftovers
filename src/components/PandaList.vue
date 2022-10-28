@@ -38,9 +38,13 @@
 <script lang="ts" setup>
 import { watchEffect, ref } from 'vue';
 import PandaCard from '@/components/PandaCard.vue';
+import { INFTData2 } from '@/common/types';
 
-const props = defineProps(['nfts']);
-const nftList = ref([]);
+const props = defineProps<{
+  nfts: INFTData2[];
+}>();
+
+const nftList = ref<INFTData2[]>([]);
 const perPage = ref(100);
 const showLoadMore = ref(false);
 

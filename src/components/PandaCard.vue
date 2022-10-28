@@ -49,6 +49,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import VLazyImage from 'v-lazy-image';
+import { IAttribute } from '@/common/types';
 
 const bgColourSelect = () =>
   [
@@ -65,13 +66,13 @@ const props = defineProps({
   nft: { type: Object, default: null },
 });
 
-const getAttributes = () => {
-  const { id, name, image, ...rest } = props.nft;
+const getAttributes = (): IAttribute => {
+  const { id, name, image, mintAddress, ...rest } = props.nft;
 
-  return rest;
+  return rest as IAttribute;
 };
 
-const attributes = ref<any>(getAttributes());
+const attributes = ref<IAttribute>(getAttributes());
 const flip = ref(false);
 const bgColour = ref(bgColourSelect());
 

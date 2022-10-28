@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 type fn = (...args: any[]) => void;
 
 const comp = (f: fn, g: fn) => (x: fn) => f(g(x));
