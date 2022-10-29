@@ -159,7 +159,7 @@ import TheBottom from '@/components/TheBottom.vue';
 import { usePandaData } from '@/composables/usePandaData';
 import { useConfetti } from '@/composables/useConfetti';
 import { useTraitFilter } from '@/composables/useTraitFilter';
-// import { useMintAddressUpdater } from '@/composables/useMintAddressUpdater';
+import { useMintAddressUpdater } from '@/composables/useMintAddressUpdater';
 
 // REFs
 const bottomFloorRef = ref<HTMLDivElement | null>(null);
@@ -172,8 +172,7 @@ const pandas = reactive(usePandaData());
 onMounted(async () => {
   window.addEventListener('scroll', handleScroll);
 
-  // await setNFTData().then(async () => await useMintAddressUpdater(nfts.value));
-  await setNFTData();
+  await setNFTData().then(async () => await useMintAddressUpdater(nfts.value));
 });
 
 onBeforeUnmount(() => {
