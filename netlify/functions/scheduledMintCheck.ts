@@ -2,7 +2,7 @@ import { schedule, Handler, HandlerEvent } from '@netlify/functions';
 import { useMintAddressUpdater } from '../../src/composables/useMintAddressUpdater';
 
 export const handler: Handler = schedule(
-  '*/5 * * * *',
+  '*/3 * * * *',
   async (event: HandlerEvent) => {
     const hasUpdates = await useMintAddressUpdater();
 
