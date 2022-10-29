@@ -1,8 +1,8 @@
 <template>
   <div>
-  <ul class="circles">
-    <li v-for="x in 10" :key="x" />
-  </ul>
+    <ul class="circles">
+      <li v-for="x in 10" :key="x" />
+    </ul>
   </div>
 </template>
 
