@@ -7,7 +7,7 @@ import {
   buildNFTDataMini,
 } from './candyMachine';
 
-export default async function useMintChecker() {
+export default async function useCandyMachine() {
   const mintAddresses = ref<string[]>([]);
   const metadataAccounts = ref<any[]>([]);
   const NFTs = ref<any[]>([]);

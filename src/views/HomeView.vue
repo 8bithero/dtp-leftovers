@@ -159,27 +159,32 @@ import TheBottom from '@/components/TheBottom.vue';
 import { usePandaData } from '@/composables/usePandaData';
 import { useConfetti } from '@/composables/useConfetti';
 import { useTraitFilter } from '@/composables/useTraitFilter';
+// import { useMintAddressUpdater } from '@/composables/useMintAddressUpdater';
 
 // REFs
 const bottomFloorRef = ref<HTMLDivElement | null>(null);
-const elevatorRaccoon = ref<HTMLDivElement | null>(null);
 const confetti = reactive(useConfetti());
+const elevatorRaccoon = ref<HTMLDivElement | null>(null);
 const filter = reactive(useTraitFilter());
-const pandas = reactive(usePandaData());
-
 const nfts = ref<INFTData2[]>([]);
+const pandas = reactive(usePandaData());
 
 onMounted(async () => {
   window.addEventListener('scroll', handleScroll);
 
-  nfts.value = process.env.VUE_APP_USE_LOCALDATA
-    ? (dtpData as INFTData2[])
-    : await pandas.getAll();
+  // await setNFTData().then(async () => await useMintAddressUpdater(nfts.value));
+  await setNFTData();
 });
 
 onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll);
 });
+
+const setNFTData = async (): Promise<void> => {
+  nfts.value = process.env.VUE_APP_USE_LOCALDATA
+    ? (dtpData as INFTData2[])
+    : await pandas.getAll();
+};
 
 const updateNFTs = () =>
   filter.state.activeFiltersSize === 0 ? nfts.value : filter.run(nfts.value);
