@@ -32,25 +32,11 @@ export const useMintAddressUpdater = async (initialNFTs: INFTData2[] = []) => {
       await pandas.update(id, { mintAddress: address });
     });
   };
-  console.log(':STARTING:');
+
   const mintedNFTs = await getMintedNFTs();
   const mintedIDs = mintedNFTs.map((x) => x.id);
-  console.log('-------------------');
-  console.log(':MINT IDS:');
-  console.log(mintedIDs);
-  console.log('-------------------');
-
   const unmintedIDs = await getUnmintedIDs();
-  console.log('-------------------');
-  console.log(':UNMINT IDS:');
-  console.log(unmintedIDs);
-  console.log('-------------------');
-
   const intersectionIDs = mintedIDs.filter((id) => unmintedIDs.includes(id));
-  console.log('-------------------');
-  console.log(':INTERSECTION IDS:');
-  console.log(intersectionIDs);
-  console.log('-------------------');
 
   return intersectionIDs.length > 0
     ? await updateMintAddresses(mintedNFTs, intersectionIDs).then(() => true)
