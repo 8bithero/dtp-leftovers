@@ -9,7 +9,7 @@ Trash Panda Leftovers is a community built tool which shows you the probability 
 
 ---
 # ToDo
-- [ ] Automatically pull new mints from the blockchain
+- [x] Automatically pull & update new mints from the blockchain
 - [ ] Clean up code
 
 ---
